@@ -1,6 +1,6 @@
 # Swift Test Report
 
-Generates an MD file from Swift XCTests and show it in the workflow summary. Uses [`Testify `](https://github.com/BinaryBirds/Testify) library to generat MD file.
+Generates an MD file from Swift XCTests and show it in the workflow summary. Uses [`Testify `](https://github.com/BinaryBirds/Testify) library to generate the MD file.
 
 ## Usage
 

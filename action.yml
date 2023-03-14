@@ -1,0 +1,28 @@
+name: 'Swift Test Report'
+description: 'Try to run Testify on XCtests and create an MD report'
+runs:
+  using: "composite"
+  steps:
+    - run: |
+          git clone https://github.com/BinaryBirds/Testify.git
+          cd Testify
+          make install
+          cd ..
+          swift build
+          swift test | testify md >> $GITHUB_STEP_SUMMARY
+      shell: bash
+
+    # TODO: which command fails in GH workflow
+    #- run: |
+    #      if which testify | grep -q 'testify not found'; 
+    #        then
+    #          git clone https://github.com/BinaryBirds/Testify.git
+    #          cd Testify
+    #          make install
+    #          cd ..
+    #        else
+    #          echo testify already installed
+    #      fi
+    #      swift build
+    #      swift test | testify md >> $GITHUB_STEP_SUMMARY
+    #  shell: bash
